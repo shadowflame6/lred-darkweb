@@ -1,0 +1,184 @@
+:root{
+  --bg:#0b0c0f;
+  --panel:#0f1114;
+  --accent:#32c948;
+  --muted:#efefefd8;
+  --card:#121416;
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --danger:#f11e1e;
+}
+*{box-sizing:border-box}
+body {
+  margin: 0;
+  font-family: "IBM Plex Mono", "JetBrains Mono", "Fira Code", "Source Code Pro",
+               ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  background: linear-gradient(180deg, #050506 0%, #0b0c0f 100%);
+  color: #e6eef1;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 30px;
+
+  /* 护眼优化 */
+  line-height: 1.65;      /* 行距更宽松，阅读舒适 */
+  letter-spacing: 0.3px;  /* 稍微增加字间距，减少拥挤感 */
+  font-size: 15px;        /* 默认字体大小 */
+}
+
+
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  border: solid 1px rgba(240, 1, 1, 0.415);
+  border-radius: 5px;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.logo{
+  width:44px;height:44px;border-radius:6px;
+  background:linear-gradient(135deg,#000000,#040404);
+  display:flex;align-items:center;justify-content:center;font-weight:700;color: rgb(227, 8, 8);
+  box-shadow: 0 6px 20px rgba(0,230,168,0.06), inset 0 -6px 18px rgba(0,0,0,0.6);
+  font-size:18px;
+}
+h1{font-size:18px;margin:0}
+.tagline{color:var(--muted);font-size:13px}
+
+.controls{
+  display:flex;gap:10px;align-items:center;
+}
+.search{
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,0.03);
+  padding:8px 10px;border-radius:8px;color:var(--muted);min-width:220px;
+  outline:none;
+}
+.btn{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color:var(--accent);border:1px solid rgba(0,230,168,0.08);
+  padding:8px 12px;border-radius:8px;cursor:pointer;font-weight:600;
+  transition:transform .08s ease, box-shadow .08s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn.secondary{color: rgb(168, 1, 1);border-color:transparent}
+.btn.danger{color:var(--danger);border-color:rgba(255,92,92,0.06)}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.03);
+  border-radius:10px;
+  padding:10px;overflow:hidden;
+  transition:box-shadow .12s ease, transform .08s ease;
+  position:relative;
+}
+.card:hover{box-shadow: 0 12px 40px rgba(0,0,0,0.6); transform:translateY(-4px);}
+
+.thumb{
+  width:100%;height:150px;border-radius:8px;background-size:cover;background-position:center;
+  border:1px solid var(--glass);
+  display:block;margin-bottom:10px;
+  position:relative;
+}
+.info{font-size:13px;color:var(--muted);line-height:1.3}
+.title{color:#cfeee2;font-weight:700;margin-bottom:6px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:8px}
+.price{color:var(--accent);font-weight:700}
+
+.contact-row{display:flex;gap:8px;margin-top:10px}
+.contact-btn{flex:1;padding:8px;border-radius:8px;background:transparent;border:1px dashed rgba(255,255,255,0.03);color:var(--accent);cursor:pointer}
+.more-btn{padding:8px;border-radius:8px;background:var(--glass-2);border:1px solid rgba(255,255,255,0.02);color:var(--muted);cursor:pointer}
+
+.contact-panel{
+  margin-top:10px;padding:10px;background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(255,255,255,0.02));
+  border-radius:8px;font-size:13px;color:#dff7ed;border:1px solid rgba(0,230,168,0.06);
+  display:none;
+}
+.contact-panel.visible{display:block}
+
+.modal-backdrop{
+  position:fixed;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7));
+  display:none;align-items:center;justify-content:center;z-index:60;
+}
+.modal-backdrop.show{display:flex}
+.modal{
+  width:min(920px,95%);background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+.modal .row{display:flex;gap:12px}
+.modal .thumb{height:220px;width:45%;flex-shrink:0}
+.modal .details{width:55%}
+
+@media (max-width:560px){
+  .modal .row{flex-direction:column}
+  .modal .thumb{width:100%;height:160px}
+}
+
+.glitch{
+  color: rgba(199, 3, 3, 0.784);
+  text-shadow:0 0 8px rgba(178, 178, 178, 0.12);
+  letter-spacing:1px;font-weight:700;
+}
+
+footer{margin-top:26px;color:var(--muted);font-size:12px;text-align:center}
+
+/* 汉堡按钮 + 抽屉菜单 */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  z-index: 101;
+}
+.desktop-only { display:flex; }
+.mobile-controls { display:none; }
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background: var(--panel);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.6);
+  transition: left 0.3s ease;
+  z-index: 102;
+  padding: 20px;
+}
+.side-menu.show { left: 0; }
+.side-menu .controls {
+  flex-direction: column;
+  gap: 12px;
+}
+.side-menu .btn,
+.side-menu .search { width: 100%; }
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 100;
+}
+.menu-overlay.show { display: block; }
+
+@media (max-width: 600px) {
+  .desktop-only { display:none; }
+  .menu-toggle { display:block; }
+  .mobile-controls { display:flex; }
+}
