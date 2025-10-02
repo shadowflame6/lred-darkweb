@@ -57,16 +57,7 @@ let items = [
     link: "img/facebookhack.html"
   },
 
-  {
-    id: "i06",
-    title: "Name: BALLÓ, Bendegúz Zoltán",
-    desc: "Wanted by Hungary",
-    image: "https://youke1.picui.cn/s1/2025/10/02/68de4a0305dca.jpg",
-    contact: "Num: +36-1-462-7547 ",
-    price: "Wanted: -- gov",
-    tags: ["wanted", "criminal"],
-    more: " Num: +36-1-462-7547 <br> Crime Illicit trafficking in narcotic drugs and psychotropic substances <br>Sex: Male <br> Eye colour: Brown <br> Date of birth: September 23, 1993 (32 years) <br> Nationality: Hungarian",
-  }
+
 ];
 
 const grid = document.getElementById('grid');
@@ -270,3 +261,4 @@ bindSync(syncBtnMobile);
 
 /* 初次渲染 */
 renderGrid(items);
+
