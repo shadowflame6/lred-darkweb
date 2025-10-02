@@ -1,0 +1,71 @@
+  <!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LRED — LOOK ONION</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">LRED</div>
+      <div>
+        <h1 style="color: rgba(255, 0, 0, 0.642);">L.RED LOOK<span class="glitch">•</span></h1>
+        <div class="tagline">Onion 暗同步连接</div>
+      </div>
+    </div>
+
+    <!-- 汉堡菜单按钮 -->
+    <button id="menuToggle" class="menu-toggle">☰</button>
+
+    <!-- 桌面端菜单 -->
+    <div class="controls desktop-only">
+      <input id="search" class="search" placeholder="搜索内容... " />
+      <button id="syncBtn" class="btn secondary" title="刷新">同步到在线服务器 刷新</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid" id="grid">
+      <!-- JS 填充卡片 -->
+    </section>
+  </main>
+
+  <footer>
+    El sitio web esta conectado con el servidor junto al navegador tor actualizando con la plataforma GitHub automaticamente, <br>
+    todas las actividades serán anónimas.
+  </footer>
+
+  <!-- 侧边菜单 -->
+  <div id="sideMenu" class="side-menu">
+    <div class="controls mobile-controls">
+      <input id="searchMobile" class="search" placeholder="搜索标题 / 标签 / 价格…" />
+      <button id="syncBtnMobile" class="btn secondary">同步到在线服务器 刷新</button>
+    </div>
+  </div>
+  <!-- 遮罩 -->
+  <div id="menuOverlay" class="menu-overlay"></div>
+
+  <!-- 模态：显示联系信息 -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+    <div class="modal" role="document">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <strong id="modalTitle">联系卖家</strong>
+        <button id="closeModal" class="btn secondary">✖</button>
+      </div>
+      <div class="row">
+        <div id="modalThumb" class="thumb" style="height:220px"></div>
+        <div class="details">
+          <div id="modalDesc" style="color:var(--muted);margin-bottom:12px;font-size:14px"></div>
+          <div style="font-weight:700;margin-bottom:6px">联系方式</div>
+          <div id="modalContact" style="font-size:15px;padding:10px;border-radius:8px;background:rgba(0,255,170,0.03);border:1px solid rgba(0,230,168,0.06)"></div>
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">上线请使用匿名联系方式。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
